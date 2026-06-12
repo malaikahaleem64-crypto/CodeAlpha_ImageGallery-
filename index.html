@@ -3,89 +3,121 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Image Gallery - CodeAlpha Task 2</title>
+<title>Image Gallery - CodeAlpha Task</title>
 <style>
 body {
   background: #0a0a0a;
   color: #fff;
-  font-family: Arial;
+  font-family: 'Poppins', Arial, sans-serif;
   padding: 20px;
   margin: 0;
+  min-height: 100vh;
 }
 h1 {
   text-align: center;
   color: #00ff88;
+  text-shadow: 0 0 15px #00ff88;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+.filters {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.filter-btn {
+  background: #1a1a1a;
+  color: #fff;
+  border: 2px solid #00ff88;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+.filter-btn:hover, .filter-btn.active {
+  background: #00ff88;
+  color: #0a0a0a;
+  box-shadow: 0 0 15px #00ff88;
 }
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 15px;
-  margin-top: 20px;
+}
+.gallery-item {
+  background: #1a1a1a;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 1px solid #333;
+  transition: 0.3s;
+}
+.gallery-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0,255,136,0.5);
 }
 .gallery-item img {
   width: 100%;
-  border-radius: 10px;
+  height: 200px;
+  object-fit: cover;
+  display: block;
 }
 .gallery-item p {
+  padding: 10px;
   text-align: center;
+  margin: 0;
   color: #00ff88;
+  font-weight: 500;
 }
 </style>
 </head>
 <body>
-<div class="container">
-  <h1>📸 My Image Gallery</h1>
-  
-  <div class="filter-buttons">
-    <button class="active" onclick="filterImages('all')">All</button>
-    <button onclick="filterImages('nature')">Nature</button>
-    <button onclick="filterImages('cars')">Cars</button>
-    <button onclick="filterImages('tech')">Tech</button>
-  </div>
 
-  <div class="gallery" id="gallery">
-    <!-- Nature - 6 Images -->
-    <div class="gallery-item" data-category="nature"><img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" alt="Nature 1"><p>Nature 1</p></div>
-    <div class="gallery-item" data-category="nature"><img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e" alt="Nature 2"><p>Nature 2</p></div>
-    <div class="gallery-item" data-category="nature"><img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e" alt="Nature 3"><p>Nature 3</p></div>
-    <div class="gallery-item" data-category="nature"><img src="https://images.unsplash.com/photo-1426604966848-d7adac402bff" alt="Nature 4"><p>Nature 4</p></div>
-    <div class="gallery-item" data-category="nature"><img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470" alt="Nature 5"><p>Nature 5</p></div>
-    <div class="gallery-item" data-category="nature"><img src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d" alt="Nature 6"><p>Nature 6</p></div>
+<h1>My Image Gallery</h1>
 
-    <!-- Cars - 6 Images -->
-<div class="gallery-item" data-category="cars"><img src="https://images.unsplash.com/photo-1542362567-b07e54358753?w=500" alt="Car 1"><p>Car 1</p></div>
-    <div class="gallery-item" data-category="cars"><img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d" alt="Car 2"><p>Car 2</p></div>
-    <div class="gallery-item" data-category="cars"><img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70" alt="Car 3"><p>Car 3</p></div>
-    <div class="gallery-item" data-category="cars"><img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7" alt="Car 4"><p>Car 4</p></div>
-    <div class="gallery-item" data-category="cars"><img src="https://images.unsplash.com/photo-1544829099-b9a0c07fad1a" alt="Car 5"><p>Car 5</p></div>
-    <div class="gallery-item" data-category="cars"><img src="https://images.unsplash.com/photo-1494905998402-395d579af36f" alt="Car 6"><p>Car 6</p></div>
+<div class="filters">
+  <button class="filter-btn active" data-filter="all">All</button>
+  <button class="filter-btn" data-filter="nature">Nature</button>
+  <button class="filter-btn" data-filter="cars">Cars</button>
+  <button class="filter-btn" data-filter="city">City</button>
+</div>
 
-    <!-- Tech - 6 Images -->
-    <div class="gallery-item" data-category="tech"><img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c" alt="Tech 1"><p>Tech 1</p></div>
-    <div class="gallery-item" data-category="tech"><img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" alt="Tech 2"><p>Tech 2</p></div>
-    <div class="gallery-item" data-category="tech"><img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6" alt="Tech 3"><p>Tech 3</p></div>
-    <div class="gallery-item" data-category="tech"><img src="https://images.unsplash.com/photo-1518770660439-4636190af475" alt="Tech 4"><p>Tech 4</p></div>
-    <div class="gallery-item" data-category="tech"><img src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b" alt="Tech 5"><p>Tech 5</p></div>
-    <div class="gallery-item" data-category="tech"><img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4" alt="Tech 6"><p>Tech 6</p></div>
-  </div>
+<div class="gallery">
+  <div class="gallery-item" data-category="nature"><img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=500" alt="Nature 1"><p>Nature 1</p></div>
+  <div class="gallery-item" data-category="nature"><img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=500" alt="Nature 2"><p>Nature 2</p></div>
+  <div class="gallery-item" data-category="nature"><img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=500" alt="Nature 3"><p>Nature 3</p></div>
+  <div class="gallery-item" data-category="nature"><img src="https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=500" alt="Nature 4"><p>Nature 4</p></div>
+  <div class="gallery-item" data-category="nature"><img src="https://images.unsplash.com/photo-1426604966848-d7adac402bff?w=500" alt="Nature 5"><p>Nature 5</p></div>
+  <div class="gallery-item" data-category="cars"><img src="https://images.unsplash.com/photo-1542362567-b07e54358753?w=500" alt="Car 1"><p>Car 1</p></div>
+  <div class="gallery-item" data-category="cars"><img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=500" alt="Car 2"><p>Car 2</p></div>
+  <div class="gallery-item" data-category="cars"><img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=500" alt="Car 3"><p>Car 3</p></div>
+  <div class="gallery-item" data-category="cars"><img src="https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?w=500" alt="Car 4"><p>Car 4</p></div>
+  <div class="gallery-item" data-category="city"><img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=500" alt="City 1"><p>City 1</p></div>
+  <div class="gallery-item" data-category="city"><img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=500" alt="City 2"><p>City 2</p></div>
+  <div class="gallery-item" data-category="city"><img src="https://images.unsplash.com/photo-1480714378408-67cf0dd6e541?w=500" alt="City 3"><p>City 3</p></div>
 </div>
 
 <script>
-function filterImages(category) {
-  const items = document.querySelectorAll('.gallery-item');
-  const buttons = document.querySelectorAll('.filter-buttons button');
-  
-  buttons.forEach(btn => btn.classList.remove('active'));
-  event.target.classList.add('active');
-  
-  items.forEach(item => {
-    if (category === 'all' || item.dataset.category === category) {
-      item.style.display = 'block';
-    } else {
-      item.style.display = 'none';
-    }
+const buttons = document.querySelectorAll('.filter-btn');
+const items = document.querySelectorAll('.gallery-item');
+
+buttons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    buttons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    
+    const filter = btn.getAttribute('data-filter');
+    
+    items.forEach(item => {
+      if(filter === 'all' || item.getAttribute('data-category') === filter) {
+        item.style.display = 'block';
+      } else {
+        item.style.display = 'none';
+      }
+    });
   });
-}
+});
 </script>
+
 </body>
 </html>
