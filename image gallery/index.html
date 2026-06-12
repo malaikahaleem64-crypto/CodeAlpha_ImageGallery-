@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <h1>Image Gallery</h1>
+    <div class="filter-btns">
+        <button class="btn active" data-filter="all">All</button>
+        <button class="btn" data-filter="nature">Nature</button>
+        <button class="btn" data-filter="cars">Cars</button>
+        <button class="btn" data-filter="tech">Tech</button>
+        <button class="btn" data-filter="bags">Bags</button>
+    </div>
+
+    <div class="gallery-grid">
+        <div class="item" data-category="nature">
+            <img src="./images/nature1.jpg" alt="Nature 1">
+            <div class="item-info">
+                <h3>Rocky Mountain Peak</h3>
+                <p>Golden sunlight hitting granite cliffs above pine forest</p>
+            </div>
+        </div>
+        
+        <div class="item" data-category="nature">
+            <img src="./images/nature2.jpg" alt="Nature 2">
+            <div class="item-info">
+                <h3>Forest Macro</h3>
+                <p>Fresh green leaves with dark bokeh background</p>
+            </div>
+        </div>
+        
+        <div class="item" data-category="nature">
+            <img src="./images/nature3.jpg" alt="Nature 3">
+            <div class="item-info">
+                <h3>Sunset Meadow</h3>
+                <p>Dramatic orange sunset over circular grass patterns</p>
+            </div>
+        </div>
+        
+        <div class="item" data-category="nature">
+            <img src="./images/nature4.jpg" alt="Nature 4">
+            <div class="item-info">
+                <h3>Sunset Meadow</h3>
+                <p>Dramatic orange sunset over circular grass patterns</p>
+            </div>
+        </div>
+        
+        <div class="item" data-category="nature">
+            <img src="./images/nature5.jpg" alt="Nature 5">
+            <div class="item-info">
+                <h3>Misty River Valley</h3>
+                <p>Fog flowing through dense forest mountains</p>
+            </div>
+        </div>
+        
+        <div class="item" data-category="nature">
+            <img src="./images/nature6.jpg" alt="Nature 6">
+            <div class="item-info">
+                <h3>Sunlit Green Canopy</h3>
+                <p>Sunlight filtering through fresh dewy leaves with bokeh glow</p>
+            </div>
+        </div>
+
+        
+        <div class="item" data-category="cars">
+            <img src="./images/car1.jpg" alt="Car 1">
+            <div class="item-info">
+                <h3>Vintage Classic</h3>
+                <p>Retro yellow beauty from the 1950s era</p>
+            </div>
+        </div>
+        <div class="item" data-category="cars">
+            <img src="./images/car2.jpg" alt="Car 2">
+            <div class="item-info">
+                <h3>Blue Beast</h3>
+                <p>Modern muscle car with aggressive street look</p>
+            </div>
+        </div>
+        <div class="item" data-category="cars">
+            <img src="./images/car3.jpg" alt="Car 3">
+            <div class="item-info">
+                <h3>Silver Supercar</h3>
+                <p>Sleek aerodynamic design built for speed</p>
+            </div>
+        </div>
+        <div class="item" data-category="cars">
+            <img src="./images/car4.jpg" alt="Car 4">
+            <div class="item-info">
+                <h3>Night Garage</h3>
+                <p>Premium white sports car with dark moody vibes</p>
+            </div>
+        </div>
+        <div class="item" data-category="cars">
+            <img src="./images/car5.jpg" alt="Car 5">
+            <div class="item-info">
+                <h3>Black Panther</h3>
+                <p>Luxury sedan with sporty rear and LED light bar</p>
+            </div>
+        </div>
+        <div class="item" data-category="cars">
+            <img src="./images/car6.jpg" alt="Car 6">
+            <div class="item-info">
+                <h3>Red Supercar Showcase</h3>
+                <p>Glossy red sports car displayed in modern showroom lighting</p>
+            </div>
+        </div>
+
+        
+        <div class="item" data-category="tech">
+            <img src="./images/tech1.jpg" alt="Tech 1">
+            <div class="item-info">
+                <h3>AI Neural Network</h3>
+                <p>Digital brain with connected nodes representing artificial intelligence</p>
+            </div>
+        </div>
+        <div class="item" data-category="tech">
+            <img src="./images/tech2.jpg" alt="Tech 2">
+            <div class="item-info">
+                <h3>Developer Workspace</h3>
+                <p>Top view of team coding with laptops, coffee and gadgets</p>
+            </div>
+        </div>
+        <div class="item" data-category="tech">
+            <img src="./images/tech3.jpg" alt="Tech 3">
+            <div class="item-info">
+                <h3>Motherboard Macro</h3>
+                <p>Detailed close-up of electronic circuit board components</p>
+            </div>
+        </div>
+        <div class="item" data-category="tech">
+            <img src="./images/tech4.jpg" alt="Tech 4">
+            <div class="item-info">
+                <h3>Programming Code</h3>
+                <p>Colorful syntax highlighting on dark theme IDE screen</p>
+            </div>
+        </div>
+        <div class="item" data-category="tech">
+            <img src="./images/tech5.jpg" alt="Tech 5">
+            <div class="item-info">
+                <h3>Human vs AI</h3>
+                <p>Futuristic concept of human and robot finger connection</p>
+            </div>
+        </div>
+        <div class="item" data-category="tech">
+            <img src="./images/tech6.jpg" alt="Tech 6">
+            <div class="item-info">
+                <h3>Friendly AI Assistant</h3>
+                <p>Cute humanoid robot holding tablet for smart interaction</p>
+            </div>
+        </div>
+
+    
+        <div class="item" data-category="bags">
+            <img src="./images/bag1.jpg" alt="Bag 1">
+            <div class="item-info">
+                <h3>Mini Orange Bag</h3>
+                <p>Trendy mini handbag with bold red sweater vibes</p>
+            </div>
+        </div>
+        <div class="item" data-category="bags">
+            <img src="./images/bag2.jpg" alt="Bag 2">
+            <div class="item-info">
+                <h3>Classic Leather</h3>
+                <p>Premium brown shoulder bag with vintage lock detail</p>
+            </div>
+        </div>
+        <div class="item" data-category="bags">
+            <img src="./images/bag3.jpg" alt="Bag 3">
+            <div class="item-info">
+                <h3>Floral Tote</h3>
+                <p>Elegant blue handbag decorated with dried flowers</p>
+            </div>
+        </div>
+        <div class="item" data-category="bags">
+            <img src="./images/bag4.jpg" alt="Bag 4">
+            <div class="item-info">
+                <h3>Casual Hobo Bag</h3>
+                <p>Soft beige slouchy bag with ruched handles</p>
+            </div>
+        </div>
+        <div class="item" data-category="bags">
+            <img src="./images/bag5.jpg" alt="Bag 5">
+            <div class="item-info">
+                <h3>Designer Tote Duo</h3>
+                <p>Textured pink and maroon shopping totes set</p>
+            </div>
+        </div>
+        <div class="item" data-category="bags">
+            <img src="./images/bag6.jpg" alt="Bag 6">
+            <div class="item-info">
+                <h3>Woven Leather Tote</h3>
+                <p>Brown leather bag with elegant chain strap and grid pattern</p>
+            </div>
+        </div>
+    </div> 
+
+    <div class="lightbox">
+        <span class="close">&times;</span>
+        <img class="lightbox-img" src="" alt="">
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
