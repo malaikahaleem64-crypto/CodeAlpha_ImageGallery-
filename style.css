@@ -1,132 +1,56 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #f5f5f5;
+  font-family: Arial;
+  background: #f0f0f0;
+  margin: 0;
   padding: 20px;
+  text-align: center;
 }
 
-h1 {
-  text-align: center;
-  margin-bottom: 30px;
-  color: #333;
-  font-size: 2.5rem;
-}
+h1 { color: #333; margin-bottom: 20px; }
 
-
-.filter-btns {
-  text-align: center;
+.filters {
   margin-bottom: 30px;
 }
 
-.btn {
-  padding: 10px 25px;
+.filter-btn {
+  padding: 10px 20px;
   margin: 5px;
   border: none;
-  background: #ddd;
-  color: #333;
+  background: #007bff;
+  color: white;
+  border-radius: 5px;
   cursor: pointer;
-  border-radius: 25px;
   font-size: 16px;
-  transition: all 0.3s;
 }
 
-.btn:hover {
-  background: #bbb;
+.filter-btn.active, .filter-btn:hover {
+  background: #0056b3;
 }
 
-.btn.active {
-  background: #ff6b6b;
-  color: white;
-}
-
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.item {
-  background: white;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
-  cursor: pointer;
-}
-
-.item:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-}
-
-
-.gallery-grid img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  display: block;
-}
-
-
-.item-info {
-  padding: 15px;
-}
-
-.item-info h3 {
-  font-size: 18px;
-  margin-bottom: 8px;
-  color: #222;
-}
-
-.item-info p {
-  font-size: 14px;
-  color: #666;
-  line-height: 1.5;
-}
-
-
-.lightbox {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.9);
-  z-index: 1000;
-  justify-content: center;
-  align-items: center;
-}
-
-.lightbox.active {
+.gallery {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
 }
 
-.lightbox-img {
-  max-width: 90%;
-  max-height: 90%;
+.gallery-item {
+  width: 300px;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
   border-radius: 10px;
-}
-
-.close {
-  position: absolute;
-  top: 20px;
-  right: 40px;
-  font-size: 40px;
-  color: white;
   cursor: pointer;
-  font-weight: bold;
+  transition: 0.3s;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-
+.gallery-item img:hover {
+  transform: scale(1.05);
+}
 @media (max-width: 768px) {
   .gallery-grid {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
